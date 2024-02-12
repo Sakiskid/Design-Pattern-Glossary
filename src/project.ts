@@ -2,10 +2,14 @@ import {makeProject} from '@motion-canvas/core';
 
 import example from './scenes/example?scene';
 
-import Client from './scenes/Structural/Adapter';
+import Adapter from './scenes/Structural/Adapter/Adapter';
+import Example from './Example';
 
-let client = new Client();
-client.run();
+let currentExample : Example;
+
+// Set the current example
+currentExample = new Adapter();
+currentExample.run();
 
 
 export default makeProject({
