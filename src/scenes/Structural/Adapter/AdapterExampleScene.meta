@@ -2,8 +2,8 @@
   "version": 0,
   "timeEvents": [
     {
-      "name": "event",
-      "targetTime": 1.7290929194231
+      "name": "pause 1",
+      "targetTime": 2
     }
   ],
   "seed": 1588063667
