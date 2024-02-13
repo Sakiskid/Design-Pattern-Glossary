@@ -1,13 +1,9 @@
 import adapterSceneController from "./wrapperExplanation?scene";
 import adapterScene1 from "./intro?scene";
 
-
-
-
-
 const orderOfScenes = [
     adapterScene1,
-    adapterSceneController,
+    // adapterSceneController,
 ]
 
 export default orderOfScenes;

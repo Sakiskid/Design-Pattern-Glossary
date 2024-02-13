@@ -1,0 +1,18 @@
+{
+  "version": 0,
+  "timeEvents": [
+    {
+      "name": "pause 1",
+      "targetTime": 2
+    },
+    {
+      "name": "code 1 pause",
+      "targetTime": 7.3290508716385245
+    },
+    {
+      "name": "code 2 pause",
+      "targetTime": 19.82498583098812
+    }
+  ],
+  "seed": 372984244
+}
