@@ -1,5 +1,5 @@
-import adapterSceneController from "./adapterSceneController?scene";
-import adapterScene1 from "./adapterScene1?scene";
+import adapterSceneController from "./wrapperExplanation?scene";
+import adapterScene1 from "./intro?scene";
 
 
 

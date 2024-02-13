@@ -25,5 +25,6 @@ import example from './scenes/example?scene';
 
 
 export default makeProject({
+// @ts-ignore
   scenes: [...adapterScenes],
 });

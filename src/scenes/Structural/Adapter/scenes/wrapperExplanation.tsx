@@ -1,11 +1,11 @@
 import {Grid, Icon, makeScene2D, Circle} from '@motion-canvas/2d';
 import {all, chain, createRef, Direction, BBox, slideTransition, waitUntil, zoomInTransition} from '@motion-canvas/core';
 import Colors from "../../../../util/colors";
-import adapterScene1 from "./adapterScene1";
+import adapterScene1 from "./intro";
 
 export default makeScene2D(function* (view) {
 
-    view.fill('red')
+    view.fill(Colors.bg)
     view.add(
         <>
             <Circle size={2400} fill={'green'}>
