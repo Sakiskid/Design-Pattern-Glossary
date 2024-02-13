@@ -1,5 +1,5 @@
 import {Circle, Icon, Txt, TxtProps, Node, Grid, makeScene2D} from '@motion-canvas/2d';
-import {all, createRef} from '@motion-canvas/core';
+import {all, chain, createRef, waitUntil} from '@motion-canvas/core';
 
 export default makeScene2D(function* (view) {
     // Create your animations here
@@ -19,17 +19,19 @@ export default makeScene2D(function* (view) {
     // view.add(<Icon icon={'f7:sportscourt'} size={320} color={primary}/>)
     view.add(
         <Grid ref={grid}>
-            <Txt position={[0, -500]} fontSize={250}>Test</Txt>
+            <Txt position={[0, -500]} fontSize={150}>Local Database</Txt>
             <Icon icon={'eos-icons:database'} size={820} color={secondary}/>
         </Grid>
     )
 
-    yield* all(
+    yield* chain(
+        grid().opacity(0, 0),
+        grid().opacity(1, 1),
         grid().position.x(-1000, 1)
-        // view.fill(bg, 2) // animate it
-        // ().scale(2, 2).to(1, 2),
-        // circle().skew(10, 1).to(1, 2),
     )
+
+    yield* waitUntil('event');
+
     yield* all(
 
     )
