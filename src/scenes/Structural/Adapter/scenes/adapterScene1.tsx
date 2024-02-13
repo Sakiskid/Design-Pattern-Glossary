@@ -1,6 +1,6 @@
-import {Circle, Icon, Txt, TxtProps, Node, Grid, Rect, Layout, makeScene2D} from '@motion-canvas/2d';
-import {all, chain, createRef, waitUntil} from '@motion-canvas/core';
-import Colors from "../../../util/colors";
+import {Grid, Icon, makeScene2D, Rect, Txt} from '@motion-canvas/2d';
+import {all, chain, createRef, Direction, slideTransition, waitUntil} from '@motion-canvas/core';
+import Colors from "../../../../util/colors";
 
 export default makeScene2D(function* (view) {
     // Create your animations here
@@ -12,10 +12,10 @@ export default makeScene2D(function* (view) {
 
     view.add(
         <>
-                <Rect ref={iconDB} fill={"blue"} grow={1}>
-                    <Txt position={[0, -500]} fontSize={150}>Local Database</Txt>
-                    <Icon icon={'eos-icons:database'} size={820} color={Colors.secondary}/>
-                </Rect>
+            <Rect ref={iconDB} fill={"blue"} grow={1}>
+                <Txt position={[0, -500]} fontSize={150}>Local Database</Txt>
+                <Icon icon={'eos-icons:database'} size={820} color={Colors.secondary}/>
+            </Rect>
         </>
     )
 
@@ -44,4 +44,6 @@ export default makeScene2D(function* (view) {
         iconP2().position(iconDB().position, 2),
         iconP3().position(iconDB().position, 2),
     )
+
+    // yield* slideTransition(Direction.Left);
 });

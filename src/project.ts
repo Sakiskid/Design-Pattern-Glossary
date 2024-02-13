@@ -1,11 +1,9 @@
 import {makeProject} from '@motion-canvas/core';
 import Example from './Example';
 
-// Load Scenes
-import AdapterExampleScene from "./scenes/Structural/Adapter/AdapterExampleScene?scene";
-import example from './scenes/example?scene';
-
+//////////////
 // Load Examples
+//////////////
 import {Client as AdapterClient} from './scenes/Structural/Adapter/AdapterExample';
 
 // Set the current example
@@ -18,7 +16,14 @@ catch (e) {
   console.error(e);
 }
 
+//////////////
+// Load Scenes
+//////////////
+import adapterScenes from "./scenes/Structural/Adapter/scenes/index";
+import example from './scenes/example?scene';
+
+
 
 export default makeProject({
-  scenes: [AdapterExampleScene],
+  scenes: [...adapterScenes],
 });
