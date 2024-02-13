@@ -18,25 +18,14 @@ export default makeScene2D(function* (view) {
 
     // view.add(<Icon icon={'f7:sportscourt'} size={320} color={primary}/>)
     view.add(
-        <Layout layout width={'100%'} height={'100%'} >
-            <Rect grow={1} fill={'#242424'} radius={4} />
-            <Layout direction={"column"}>
-                <Rect ref={grid} fill={"red"} grow={1}>
+        <>
+            <Rect grow={0.25} fill={'#242424'} radius={4} />
+                <Rect ref={grid} fill={"blue"} grow={1}>
                     <Txt position={[0, -500]} fontSize={150}>Local Database</Txt>
                     <Icon icon={'eos-icons:database'} size={820} color={secondary}/>
                 </Rect>
-            </Layout>
-            <Rect grow={1} fill={'green'} radius={4} />
-            {/*<Layout gap={10} direction="column" grow={3}>*/}
-            {/*    <Rect*/}
-            {/*        grow={8}*/}
-            {/*        fill={"red"}*/}
-            {/*        radius={4}*/}
-            {/*        stroke={'#fff'}*/}
-            {/*        lineWidth={4}*/}
-            {/*        margin={2}*/}
-            {/*    />*/}
-        </Layout>
+            <Rect grow={0.25} fill={'green'} radius={4} />
+        </>
     )
 
     const player1 = createRef<Icon>();
@@ -46,6 +35,10 @@ export default makeScene2D(function* (view) {
     view.add(<Icon icon={'f7:sportscourt'} ref={player2} size={354} color={secondary} opacity={1}/>)
     view.add(<Icon icon={'f7:sportscourt'} ref={player3} size={354} color={secondary} opacity={1}/>)
 
+    player1().position([1200, -700]);
+    player2().position([1200, 0]);
+    player3().position([1200, 700]);
+
     yield* chain(
         grid().opacity(0, 0),
         grid().opacity(1, 1),
@@ -54,10 +47,10 @@ export default makeScene2D(function* (view) {
 
     yield* waitUntil('pause 1');
 
-    yield* chain(
-        // player1().position([1200, -700], -1),
-        // player2().position([1200, -0], -1),
-        // player3().position([1200, 700], -1),
+    // Move players into the database
+    yield* all(
+        player1().position(grid().position, 2),
+        player2().position(grid().position, 2),
+        player3().position(grid().position, 2),
     )
-    // yield*    circle().fill("#ffffff", 2).to("#e13238", 1);
 });
